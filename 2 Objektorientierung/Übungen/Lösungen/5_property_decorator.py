@@ -11,8 +11,12 @@ Hinweis: Die Funktion isinstance könnte hilfreich sein.
 """
 class Person:
     def __init__(self, name, alter):
-        self._name = name
-        self._alter = alter
+        # wenn wir die Attribute hier auf public setzen, wird direkt
+        # der setter verwendet!
+        # siehe: https://stackoverflow.com/questions/2627002/whats-the-pythonic-way-to-use-getters-and-setters
+        # und: https://stackoverflow.com/questions/35878470/call-a-setter-from-init-in-python
+        self.name = name
+        self.alter = alter
 
     @property
     def name(self):
