@@ -7,7 +7,7 @@ l1[0] # sollte 1 liefern
 
 Aufgabe:
 Implemntiere diese beiden Funktionalitäten, indem du die __getitem__ und __setitem__ Methode
-überlädst.
+überschreibst.
 """
 class MyList:
 
