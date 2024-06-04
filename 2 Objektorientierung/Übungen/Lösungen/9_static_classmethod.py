@@ -29,7 +29,7 @@ class Manager:
         self.loayalitaets_bonus = self.betriebszugehoerigkeit * 200
 
     def erhoehe_gehalt(self):
-        self.grundgehalt *= self.erhoehungsfaktor
+        self.grundgehalt *= Manager.erhoehungsfaktor
 
     def erhalte_gehalt(self):
         return self.grundgehalt + self.loayalitaets_bonus
