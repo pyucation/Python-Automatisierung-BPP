@@ -3,9 +3,9 @@ class Angestellter:
     def __init__(self, name):
         # public: von überall (auch außerhalb) der Klasse zugreifbar
         self.name = name
-        # private: nur von innerhalb der Klasse und der Unterklassen zugreifbar
+        # protected: nur von innerhalb der Klasse und der Unterklassen zugreifbar
         self._gehalt = 50000
-        # protected: nur innerhalb der Klasse zugänglich
+        # private: nur innerhalb der Klasse zugänglich
         self.__pin = "123"
 
     # Getter und Setter bieten einen kontrollierten Zugriff auf private und geschützte Attribute
@@ -17,7 +17,7 @@ class Angestellter:
         if isinstance(neues_gehalt, int):
             self._gehalt = neues_gehalt
         else:
-            raise ValueError("Value must be an integer")
+            raise TypeError("Value must be an integer")
         
     def ueberpruefe_pin(self, pin):
         if pin == self.__pin:
@@ -30,10 +30,10 @@ a1 = Angestellter("Thomas")
 
 # public Attribut
 print(a1.name)
-# private Attribut
+# protected Attribut
 print(a1._gehalt)
-# protected Attribut - Fehler!
-print(a1.__pin)
+# private Attribut - Fehler!
+# print(a1.__pin)
 
 a1.ueberpruefe_pin("345")
 print("_"*20)
@@ -43,7 +43,7 @@ print("_"*20)
 class Angestellter2:
 
     def __init__(self, name):
-        self._name = name # jetzt auch private
+        self._name = name # jetzt auch protected
         self._gehalt = 50000
         self.__pin = "123"
 
@@ -71,6 +71,6 @@ class Angestellter2:
 a2 = Angestellter2("Klaus")
 print(a2.gehalt)
 
-a2.name = 123 # Fehler!
+# a2.name = 123 # Fehler!
 a2.name = "Hannelore"
 print(a2.name)
