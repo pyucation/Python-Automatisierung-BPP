@@ -30,6 +30,11 @@ class Person:
     def from_birthday(cls, name, birthday):
         return cls(name, date.today().year - birthday)
     
+    @classmethod
+    def from_string(cls, s):
+        name, age = s.split("-")[0], int(s.split("-")[1])
+        return cls(name, age)
+    
 
 
 class Calculator:
@@ -39,3 +44,9 @@ class Calculator:
         return x + y
 
 print('Summe:', Calculator.addNumbers(15, 110))
+
+
+person_string = "Herbert-54"
+p1 = Person.from_string(person_string)
+print(p1.name)
+print(p1.age)
