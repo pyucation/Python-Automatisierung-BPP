@@ -32,6 +32,8 @@ print(df.head())
 print(df.iloc[2])
 # Zugriff auf die Spalten 'Abteilungsname' und 'Mitarbeiterzahl' der ersten drei Zeilen
 print(df.iloc[0:3, [0, 1]])
+# besser
+print(df[["Abteilungsname", "Mitarbeiterzahl"]].iloc[:3])
 
 # 2.
 # Zugriff auf alle Zeilen, in denen die Mitarbeiterzahl größer als 20 ist
@@ -42,6 +44,8 @@ print(df.loc[104])
 # 3.
 # Verwende loc und iloc, um die 'Mitarbeiterzahl' der Abteilungen 'IT' und 'Marketing' auszugeben
 print(df.loc[[102, 104], 'Mitarbeiterzahl'])  # loc für die Namen
+# oder so:
+print(df[["Mitarbeiterzahl"]].loc[[102, 104]]) # oder entsprechend andersrum
 print(df.iloc[[1, 3], 1])  # iloc für die Positionen (beide Methoden sollten das gleiche Ergebnis liefern)
 
 # 4.
