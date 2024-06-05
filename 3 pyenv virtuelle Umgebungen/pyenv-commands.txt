@@ -1,5 +1,5 @@
 Installieren:
-git clone https://github.com/pyenv-win/pyenv-win.git $HOME\.pyen
+git clone https://github.com/pyenv-win/pyenv-win.git $HOME\.pyenv
 
 Umgebungsvariablen und Pfade setzen:
 setx PATH "%USERPROFILE%\.pyenv\pyenv-win\bin;%USERPROFILE%\.pyenv\pyenv-win\shims;%PATH%"
