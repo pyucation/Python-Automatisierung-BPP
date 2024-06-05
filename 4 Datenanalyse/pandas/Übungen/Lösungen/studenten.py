@@ -28,7 +28,7 @@ Aufgaben:
 import pandas as pd
 
 
-file_path = 'pandas/Übungen/studenten_datensatz.csv'
+file_path = '4 Datenanalyse/pandas/Übungen/studenten_datensatz.csv'
 data = pd.read_csv(file_path, delimiter=';')
 
 # 1.
@@ -78,6 +78,8 @@ print(f"Die am häufigsten genannte Lieblingsfarbe ist: {most_frequent_color}")
 import matplotlib.pyplot as plt
 
 data['Abschlussnote'].hist(bins=10)
+# auch möglich:
+# plt.hist(data["Abschlussnote"], bins=10)
 plt.title('Verteilung der Abschlussnoten')
 plt.xlabel('Abschlussnote')
 plt.ylabel('Anzahl der Studenten')
