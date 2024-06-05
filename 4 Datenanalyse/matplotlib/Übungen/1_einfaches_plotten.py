@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 
 
 x = [1, 2, 3, 4, 5, 6]
-y = [i**(1/2) for i in x]
+y1 = [i**(1/2) for i in x]
+y2 = [i/(i**2) for i in x]
 
 # dein Plot hier
