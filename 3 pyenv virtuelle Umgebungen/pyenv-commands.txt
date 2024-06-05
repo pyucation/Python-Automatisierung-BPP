@@ -1,0 +1,34 @@
+Installieren:
+git clone https://github.com/pyenv-win/pyenv-win.git $HOME\.pyen
+
+Umgebungsvariablen und Pfade setzen:
+setx PATH "%USERPROFILE%\.pyenv\pyenv-win\bin;%USERPROFILE%\.pyenv\pyenv-win\shims;%PATH%"
+setx PYENV %USERPROFILE%\.pyenv
+setx PYENV_ROOT %USERPROFILE%\.pyenv
+setx PYENV_HOME %USERPROFILE%\.pyenv
+
+Verifikation:
+pyenv --version
+
+
+Python-Version installieren/deinstallieren:
+pyenv install 3.9.6
+pyenv uninstall 3.9.6
+
+Verfügbare Versionen anzeigen lassen:
+pyenv install --list
+
+globale Python-Version setzen:
+pyenv global 3.9.6
+
+
+lokale Python-Version für ein Verzeichnis:
+mkdir mein-projekt
+cd mein-projekt
+pyenv local 3.9.6
+
+temporär bestimmte Version in der Shell nutzen:
+pyenv shell 3.9.6
+
+interne Python-Tests laufen lassen (optional und unabhängig von pyenv):
+python -m test
