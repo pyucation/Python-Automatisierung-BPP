@@ -38,6 +38,10 @@ logs_grouped = logs.groupby('event_type')['packet_count'].sum().reset_index()
 
 # Analyse
 most_active_ip = logs['source_ip'].value_counts().idxmax()
+# man kann hier auch ohne Grouper arbeiten:
+# logs.groupby("timestamp")
+# aber dann kann man keine Frequenz dazu angeben, aus diesem Grund nutzt man den Grouper
+# siehe: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html
 busiest_period = logs.groupby(pd.Grouper(key='timestamp', freq='10Min'))['packet_count'].sum().idxmax()
 # alternativ, wem das zu kompliziert ist, kann es auch so lösen:
 grouped_logs = logs.set_index('timestamp').resample('10Min')['packet_count'].sum()
