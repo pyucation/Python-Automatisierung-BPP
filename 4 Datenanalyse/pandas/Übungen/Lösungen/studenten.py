@@ -14,7 +14,7 @@ Aufgaben:
 
     4. Gruppierung und Aggregation:
         Berechne den Durchschnitt der Abschlussnoten für jedes Studienfach.
-        Finde das am häufigsten genannte Lieblingsfarbe unter allen Studenten.
+        Finde die am häufigsten genannte Lieblingsfarbe unter allen Studenten.
     
     5. Funktion anwenden:
         Schreibe eine Funktion, die die Matrikelnummer nimmt und den Buchstaben
@@ -69,8 +69,10 @@ data_temp = data.copy()
 data_temp["Matrikelnummer"] = data_temp["Matrikelnummer"].apply(aendere_matrikelnr)
 print(data_temp)
 
-# finde das am häufigsten genannte Lieblingsfarbe
+# finde die am häufigsten genannte Lieblingsfarbe
 most_frequent_color = data['Lieblingsfarbe'].mode()[0]
+# mit groupby, aber nicht empfohlen
+# print(data.groupby("Lieblingsfarbe").count().idxmax().values[0])
 print(f"Die am häufigsten genannte Lieblingsfarbe ist: {most_frequent_color}")
 
 
