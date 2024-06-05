@@ -50,7 +50,8 @@ print(df.iloc[[1, 3], 1])  # iloc für die Positionen (beide Methoden sollten da
 
 # 4.
 # Aktualisiere die 'Mitarbeiterzahl' der 'Finanzen'-Abteilung auf 28 mit loc
-df.loc[103, 'Mitarbeiterzahl'] = 28
+df.loc[103, 'Mitarbeiterzahl'] = 28 # weil hier keine Kopie kommt
+# df.loc[[103]][["Mitarbeiteranzahl"]] ist eine Kopie und daher sind die Änderungen unwirksam
 print(df.loc[103])
 # Füge eine neue Abteilung hinzu mit der ID 106
 df.loc[106] = ['Kundenservice', 18, 'Leipzig']
