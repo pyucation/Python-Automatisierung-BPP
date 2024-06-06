@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 
 
 # Daten einlesen
-logs = pd.read_csv('Datenverarbeitung-Gesamtübungen/cybersecurity_logs.csv')
+logs = pd.read_csv('4 Datenanalyse/Datenverarbeitung-Gesamtübungen/cybersecurity_logs.csv')
 
 # Daten vorverarbeiten
 logs['timestamp'] = pd.to_datetime(logs['timestamp'])
@@ -47,8 +47,8 @@ most_active_ip = logs['source_ip'].value_counts().idxmax()
 # siehe: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html
 busiest_period = logs.groupby(pd.Grouper(key='timestamp', freq='10Min'))['packet_count'].sum().idxmax()
 # alternativ, wem das zu kompliziert ist, kann es auch so lösen:
-grouped_logs = logs.set_index('timestamp').resample('10Min')['packet_count'].sum()
-busiest_period = grouped_logs.idxmax()
+# grouped_logs = logs.set_index('timestamp').resample('10Min')['packet_count'].sum()
+# busiest_period = grouped_logs.idxmax()
 
 print(f"Die IP-Adresse mit den meisten Ereignissen ist: {most_active_ip}")
 print(f"Der Zeitraum mit der höchsten Anzahl an Paketen ist: {busiest_period}")

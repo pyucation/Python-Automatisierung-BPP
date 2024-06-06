@@ -24,9 +24,9 @@ from fpdf import FPDF
 import os
 
 # CSV-Daten einlesen
-df_january = pd.read_csv('Datenverarbeitung-Gesamtübungen/sales_january.csv')
-df_february = pd.read_csv('Datenverarbeitung-Gesamtübungen/sales_february.csv')
-df_march = pd.read_csv('Datenverarbeitung-Gesamtübungen/sales_march.csv')
+df_january = pd.read_csv('4 Datenanalyse/Datenverarbeitung-Gesamtübungen/sales_january.csv')
+df_february = pd.read_csv('4 Datenanalyse/Datenverarbeitung-Gesamtübungen/sales_february.csv')
+df_march = pd.read_csv('4 Datenanalyse/Datenverarbeitung-Gesamtübungen/sales_march.csv')
 
 # Monatsspalte hinzufügen
 df_january['Monat'] = 'Januar'
