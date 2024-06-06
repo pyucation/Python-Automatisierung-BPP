@@ -34,6 +34,9 @@ logs = pd.read_csv('Datenverarbeitung-Gesamtübungen/cybersecurity_logs.csv')
 
 # Daten vorverarbeiten
 logs['timestamp'] = pd.to_datetime(logs['timestamp'])
+# alternativ: apply mit datetime nutzen
+# from datetime import datetime
+# logs["timestamp"] = logs["timestamp"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
 logs_grouped = logs.groupby('event_type')['packet_count'].sum().reset_index()
 
 # Analyse
