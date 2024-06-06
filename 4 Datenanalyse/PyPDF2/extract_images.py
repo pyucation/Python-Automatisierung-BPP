@@ -1,6 +1,6 @@
 from PyPDF2 import PdfReader
 
-reader = PdfReader("PyPDF2/kriminelle.pdf")
+reader = PdfReader("4 Datenanalyse/PyPDF2/kriminelle.pdf")
 
 # nur auf der ersten Seite
 page = reader.pages[0]

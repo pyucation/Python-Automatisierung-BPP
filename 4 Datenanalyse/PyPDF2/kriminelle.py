@@ -1,8 +1,9 @@
 # from PyPDF2 import PdfReader
 
-# reader = PdfReader("PyPDF2/kriminelle.pdf")
+# reader = PdfReader("4 Datenanalyse/PyPDF2/kriminelle.pdf")
 # page = reader.pages[0]
 # print(page.extract_text())
+
 import PyPDF2
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -65,7 +66,7 @@ def parse_text_to_dataframe(text):
     return pd.DataFrame(data)
 
 # PDF-Datei einlesen
-pdf_path = 'PyPDF2/kriminelle.pdf'
+pdf_path = '4 Datenanalyse/PyPDF2/kriminelle.pdf'
 text = extract_text_from_pdf(pdf_path)
 
 # Text in DataFrame umwandeln
