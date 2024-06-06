@@ -34,9 +34,9 @@ print(f'Durchschnittliche Anrufdauer: {durchschnittliche_dauer} Minuten')
 häufigste_anrufer = df['Anrufer'].value_counts()
 häufigste_empfänger = df['Empfänger'].value_counts()
 print('Häufigste Anrufer:')
-print(häufigste_anrufer)
+print(häufigste_anrufer) # theoretisch noch .idxmax())
 print('Häufigste Empfänger:')
-print(häufigste_empfänger)
+print(häufigste_empfänger) # theoretisch noch .idxmax())
 
 # Anrufdauer-Verteilung anzeigen
 plt.figure(figsize=(10, 6))
@@ -50,10 +50,30 @@ plt.show()
 df['Datum'] = pd.to_datetime(df['Zeitstempel']).dt.date
 anrufe_pro_tag = df['Datum'].value_counts().sort_index()
 plt.figure(figsize=(10, 6))
-anrufe_pro_tag.plot(kind='line')
+anrufe_pro_tag.plot(kind='line', rot=45)
 plt.title('Anzahl der Anrufe pro Tag')
 plt.xlabel('Datum')
 plt.ylabel('Anzahl der Anrufe')
+plt.show()
+
+# häufigste Empfänger und Anrufer
+plt.figure()
+anrufer = df["Anrufer"].value_counts()
+empfaenger = df["Empfänger"].value_counts()
+# anrufer.plot(kind='bar', position=0.1, color="green", width=0.3)
+# empfaenger.plot(kind='bar', position=0.9, color="orange", width=0.3)
+
+# wir nutzen die erste Indexspalte, um uns eine numerische x-Achse zu bauen
+import numpy as np
+x1 = np.arange(len(anrufer.index))
+x2 = np.arange(len(empfaenger.index))
+plt.bar(x1 - 0.2, anrufer, color="green", width=0.3, label="Anrufer")
+plt.bar(x2 + 0.2, empfaenger, color="orange", width=0.3, label="Empfänger")
+# TODO: Hannelore Schmidt ist so nciht richtig!
+plt.xticks(x1, anrufer.index)
+plt.title("Anrufer vs. Empfänger pro Person")
+plt.ylabel("Anzahl")
+plt.legend(loc="upper right")
 plt.show()
 
 # Verteilung der Anrufe nach Standort analysieren
